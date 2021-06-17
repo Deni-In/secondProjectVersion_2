@@ -14,8 +14,8 @@ const commentSchema = new mongoose.Schema({
     ref: "Post",
   },
   data: {
-    type: String,
-    required: true
+    type: Date,
+    default: Date.now() + 3 * 60 * 60 * 1000
   }
 });
 
