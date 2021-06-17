@@ -1,7 +1,7 @@
-const Category = require("../../models/Category");
+const Comment = require("../../models/Comment");
 
 const deleteComment = async (req, res) => {
-  const comment = await Comment.find({ _id: req.body.id });
+  const comment = await Comment.findById(req.body.id);
   comment.delete();
 
   res.send("Комментарий удален");
