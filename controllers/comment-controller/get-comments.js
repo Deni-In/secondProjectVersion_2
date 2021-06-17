@@ -10,4 +10,4 @@ const getCommentId = async (req, res) => {
   }
 };
 
-module.exports = getCommentId
+module.exports = getCommentId;

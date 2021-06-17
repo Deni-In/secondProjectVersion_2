@@ -7,10 +7,10 @@ const addPost = async (req, res) => {
       txt: req.body.txt,
       categoryId: req.body.categoryId,
     });
-    post.save()
+    post.save();
     res.json("Post added");
   } catch (e) {
-    console.log(e.message)
+    console.log(e.message);
   }
 };
 

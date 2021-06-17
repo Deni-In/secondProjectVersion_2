@@ -9,7 +9,6 @@ const patchPost = async (req, res) => {
       },
     }
   );
-
   res.json("Post changed");
 };
 

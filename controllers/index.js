@@ -3,7 +3,7 @@ const methodPostCategory = require("./category-controller/adding-category");
 const methodDeleteCategory = require("./category-controller/delete-category");
 const methodPatchCategory = require("./category-controller/unpdate-category");
 
-const methodGetPost = require("./post-controller/get.posts");
+const methodGetPost = require("./post-controller/get-posts");
 const methodPostPost = require("./post-controller/adding-post");
 const methodDeletePost = require("./post-controller/delete-post");
 const methodPatchPost = require("./post-controller/update-post");
