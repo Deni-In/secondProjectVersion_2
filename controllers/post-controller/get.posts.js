@@ -7,16 +7,14 @@ const getAllPosts = async (req, res) => {
 };
 
 const getPostById = async (req, res) => {
-  const Post = require("/models/Post");
   const item = await Post.findById(req.params.id);
 
   res.json(item);
 };
 
 const getPostsFromCategory = async (req, res) => {
-  const Post = require("/models/Post");
   const postsFromCategory = await Post.find({
-    category: req.params.id,
+    category: req.params.categoryId,
   });
   res.json(postsFromCategory);
 };
