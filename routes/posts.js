@@ -3,15 +3,16 @@ const Post = require("../models/Post");
 const router = Router();
 const methods = require("../controllers/index");
 
-router.get('/posts');
+router.get("/posts", methods.methodGetPost.getAllPosts);
 
-router.get('/posts/:id');
+router.get("/posts/:id", methods.methodGetPost.getPostById);
 
-router.get('/categories/:id/posts');
+router.get("/categories/:id/posts", methods.methodGetPost.getPostsFromCategory);
 
-router.post('/posts');
+router.post("/posts", methods.methodPostPost);
 
-router.delete('/posts/:id');
+router.delete("/posts/:id", methods.methodDeletePost);
 
-router.patch('/posts/:id');
-module.exports = router
+router.patch("/posts/:id", methods.methodPatchPost);
+
+module.exports = router;

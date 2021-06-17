@@ -1,6 +1,11 @@
 const { Router } = require("express");
-const Category = require("../models/Category");
+const Category = require("./categories");
+const Post = require("./posts");
+const Comment = require("./comments");
 const router = Router();
-const methods = require("../controllers/index");
+
+router.use(Category);
+router.use(Post);
+router.use(Comment);
 
 module.exports = router;

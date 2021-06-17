@@ -1,10 +1,11 @@
-const Post = require('/models/Post');
+const Post = require("../../models/Post");
 
 const deletePost = async (req, res) => {
-    const post = await Post.findById(req.params.id)
-    post.delete();
+  // const Post = require("/models/Post");
+  const post = await Post.findById(req.params.id);
+  post.delete();
 
-    res.json('Post deleted')
-}
+  res.json("Post deleted");
+};
 
-module.exports = deletePost
+module.exports = deletePost;

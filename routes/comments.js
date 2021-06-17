@@ -3,12 +3,12 @@ const Comment = require("../models/Comment");
 const router = Router();
 const methods = require("../controllers/index");
 
-router.get('/posts/:id/comments');
+router.get('/posts/:id/comments', methods.methodGetComment.getCommentId);
 
-router.post('/comments');
+router.post('/comments', methods.methodPostComment);
 
-router.delete('/comments/:id');
+router.delete('/comments/:id', methods.methodDeleteComment);
 
-router.patch('/comments/:id');
+router.patch('/comments/:id', methods.methodPatchComment);
 
 module.exports = router;
