@@ -6,7 +6,7 @@ const addComment = async (req, res) => {
       txt: req.body.txt,
       writer: req.body.writer,
       postId: req.body.postId,
-      data: req.body.data
+      data: req.body.data,
     });
     comment.save();
     res.json("Comment added");

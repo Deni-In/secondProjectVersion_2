@@ -10,11 +10,20 @@ const patchComment = async (req, res) => {
           ...req.body,
         },
       }
-    )
+    );
     res.json("Комментарий изменен");
   } catch (e) {
     console.log(e);
   }
+  await Comment.updateOne(
+    { _id: req.params.id },
+    {
+      $set: {
+        ...req.body,
+      },
+    }
+  );
+  res.json("Комментарий изменен");
 };
 
 module.exports = patchComment;
