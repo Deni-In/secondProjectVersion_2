@@ -1,25 +1,25 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const indexRouter = require("./routes/index");
+const express = require("express"); //Подключаем библеотеку express
+const mongoose = require("mongoose"); //Подключаем библеотеку mongoose
+const indexRouter = require("./routes/index"); //Подключает папку routes и файл index
 
-mongoose
-  .connect(
-    "mongodb+srv://tepsurkaev:SgTrNSS_2003@cluster0.neogw.mongodb.net/blog",
+mongoose //Подключает базу данных
+  .connect( //Коннектит в компас
+    "mongodb+srv://tepsurkaev:SgTrNSS_2003@cluster0.neogw.mongodb.net/blog", //Сылка на компас
     {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      useNewUrlParser: true, //¯\_(ツ)_/¯ Ахьмад сказал прописать
+      useUnifiedTopology: true, //¯\_(ツ)_/¯ Ахьмад сказал прописать
     }
   )
   .then(() => {
-    console.log("Connect to mongoDB server");
+    console.log("Connect to mongoDB server"); //Выводит в консоль текст
   });
 
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const app = express();//Подключает сервер express
+app.use(express.json()); //Декодируем файлы в json
+app.use(express.urlencoded({ extended: true })); //¯\_(ツ)_/¯
 
-app.use(indexRouter);
+app.use(indexRouter); //Использует папку
 
-app.listen(3000, () => {
-  console.log("Server is running...");
+app.listen(3000, () => { //Создаёт порт сервера
+  console.log("Server is running..."); //Выводит в консоль текст
 });
