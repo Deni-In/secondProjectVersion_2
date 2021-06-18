@@ -1,15 +1,15 @@
-const Post = require("../../models/Post");
+const Post = require("../../models/Post");  // подключаем модель поста
 
-const patchPost = async (req, res) => {
-  await Post.updateOne(
-    { _id: req.params.id },
+const patchPost = async (req, res) => {   // создаем функцию изменения поста
+  await Post.updateOne(   // меняем пост методом
+    { _id: req.params.id },  // ищем пост по id из ссылки
     {
       $set: {
-        ...req.body,
+        ...req.body,  // берем данные из тела запроса
       },
     }
   );
-  res.json("Post changed");
+  res.json("Post changed");  // вывод сообщения об изменения
 };
 
-module.exports = patchPost;
+module.exports = patchPost;  // экспортируем функцию
