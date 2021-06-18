@@ -1,21 +1,21 @@
-const mongoose = require("mongoose");
-const postSchema = new mongoose.Schema({
-  title: {
+const mongoose = require("mongoose");   // подключаем монгус
+const postSchema = new mongoose.Schema({  // создаем схему модели
+  title: {  // название строкой и обязательно
     type: String,
     required: true,
   },
-  txt: {
+  txt: {  // текст строкой и обязательно
     type: String,
     required: true,
   },
-  categoryId: {
+  categoryId: {  // категория id конкретной категории
     type: mongoose.Schema.Types.ObjectId,
     ref: "Category",
   },
-  data: {
+  data: { // дата поста ставится методом
     type: Date,
     default: Date.now() + 3 * 60 * 60 * 1000,
   },
 });
 
-module.exports = mongoose.model("Post", postSchema);
+module.exports = mongoose.model("Post", postSchema);  // экспортируем модель
